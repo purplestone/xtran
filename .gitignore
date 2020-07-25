@@ -1,0 +1,13 @@
+.cache
+.DS_Store
+.vscode
+.idea
+.package
+.log
+*.map
+node_modules/*
+src/envConf.njs
+temp/
+logs/
+build/
+bower_components
