@@ -1,5 +1,6 @@
 var $$xtran = require('../../lib/main.js');
 var assert = require('assert');
+var os = require('os');
 
 var csvStrA = `
 name,age
@@ -29,7 +30,7 @@ $$xtran(csvStrA, 'csv').then(oCsv => {
 			{'[name]': '(zzz)', '[age]': '=31'},
 		]);
 		oB.toFormat('csv').then(oCsvB => {
-			assert.deepEqual(oCsvB.data, csvStrB.trim().replace(/\n/g, '\r\n'));
+			assert.deepEqual(oCsvB.data, csvStrB.trim().replace(/\n/g, os.EOL));
 		})
 	});
 
@@ -38,7 +39,7 @@ $$xtran(csvStrA, 'csv').then(oCsv => {
 			mode: 'b',
 			format: 'csv'
 		}).then(oCsv => {
-			assert.deepEqual(oCsv.data, csvStrB.trim().replace(/\n/g, '\r\n'));
+			assert.deepEqual(oCsv.data, csvStrB.trim().replace(/\n/g, os.EOL));
 		})
 		
 	});

@@ -1,5 +1,6 @@
 var $$xtran = require('../../lib/main.js');
 var assert = require('assert');
+var os = require('os');
 
 
 assert.ok($$xtran);
@@ -21,7 +22,7 @@ $$xtran.json(oInputJson).then(data => {
 		'csv'
 	]);
 	data.toFormat('csv').then(oCsvData => {
-		assert.deepEqual(oCsvData.data, '"a","b"\r\n1,2');
+		assert.deepEqual(oCsvData.data, '"a","b"'+os.EOL+'1,2');
 		assert.equal(oCsvData.format, 'csv');
 		return oCsvData.toFormat('json');
 	}).then(oJson => {
