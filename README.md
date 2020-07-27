@@ -58,3 +58,9 @@ $$xtran(csvStrA, 'csv').then(data => {
 
 });
 ```
+
+
+```bash
+xtran --init
+xtran fileA fileB
+```
