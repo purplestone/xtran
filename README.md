@@ -58,3 +58,36 @@ $$xtran(csvStrA, 'csv').then(data => {
 
 });
 ```
+
+```bash
+xtran -ff csv -fm a -tf json -tm b fileA fileB
+xtran file.a.csv file.b.json
+
+
+
+```
+
+	Usage: xtran [options] <fileFrom> <fileTo>
+
+	default mode and farmat info from file name.
+	<fileName> = <filePath.mode.format>
+	eg.
+		xtran list.user.json list.vip.csv
+
+	Options:
+	-V, --version                     output the version number
+	--ff, --from-farmat <fileFarmat>  what format transform file from
+	--fm, --from-mode <fileMode>      what mode transform file from
+	--tf, --to-farmat <fileFarmat>    what format of file transform to
+	--tm, --to-mode <fileMode>        what mode of file transform to
+	-f, --farmat <format>             list format can <format> transform to
+	-m, --mode <mode>                 list mode can <mode> transform to
+	-l, --list                        show all transform function
+	-h, --help                        display help for command
+
+	Commands:
+	*
+	init [scriptDir]                  xtran function script create into [scriptDir]
+	list                              show all transform function
+	help [command]                    display help for command
+	
