@@ -92,6 +92,20 @@
 		{
 			"type": "node",
 			"request": "launch",
+			"name": "xtran script",
+			"env": {
+				"DEBUG": "xtran"
+			},
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"program": "${workspaceFolder}/lib/cli.js",
+			"args": ["script", "del.js"]
+		},
+		
+		{
+			"type": "node",
+			"request": "launch",
 			"name": "xtran list -l",
 			"env": {
 				"DEBUG": "xtran"

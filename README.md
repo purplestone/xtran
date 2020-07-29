@@ -2,11 +2,13 @@
 
 ## API
 * xtran( input, opt );
-* xtran.config({ formatDir, modeDir })
 * xtran.file(filePath).then( TranObj => {} )
 * xtran.json(jsonFilePath).then( TranObj => {} )
+* xtran.config({ extFormatDir, extModeDir })
+* xtran.addScriptDir()
 
 TranObj
+* oTran.data
 * oTran.toFormat( sFormat ).then( TranObj => {} )
 * oTran.toMode( sMode ).then( TranObj => {} )
 * oTran.to({ format, mode }).then( TranObj => {} )

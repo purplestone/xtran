@@ -1,0 +1,11 @@
+var $$xtran = require('${scriptRootDir}/main.js');
+
+
+$$xtran.file('file.csv', 'csv').then(oCsv => {
+	oJson.to({
+		mode: 'b',
+		format: 'json'
+	}).then(oJson => {
+		oJson.saveFile('file.json');
+	});
+});

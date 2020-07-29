@@ -36,7 +36,7 @@ exports.run = function () {
 	child_process.spawnSync('xtran', devConfig['xtran cli a b.csv'].args, {
 		cwd: __dirname
 	});
-	assert.equal(fs.readFileSync(path.join(__dirname, 'b.csv')).toString(), abCase.csvStrA);
+	assert.equal(fs.readFileSync(path.join(__dirname, 'b.csv')).toString().replace(/\r/g, ''), abCase.csvStrA);
 
 
 	child_process.spawnSync('xtran', devConfig['xtran cli list.a.csv list.b.csv'].args, {
