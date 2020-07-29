@@ -1,0 +1,23 @@
+module.exports = {
+	from: 'modeNameA',
+	check: function (oJson, opt) {
+		return true;
+	},
+	fromFormat: {
+		json: function (input, opt) {
+			debugger;
+		}
+	},
+	toMode: {
+		modeNameB: function (input, opt) {
+			debugger;
+			return input.map((o, i) => {
+				var oR = Object.assign(o, {modeNameB: i});
+				// todo
+				return oR;
+			});
+		}
+	},
+	disable: false,
+};
+

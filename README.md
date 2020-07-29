@@ -1,3 +1,19 @@
+
+
+## API
+* xtran( input, opt );
+* xtran.config({ formatDir, modeDir })
+* xtran.file(filePath).then( TranObj => {} )
+* xtran.json(jsonFilePath).then( TranObj => {} )
+
+TranObj
+* oTran.toFormat( sFormat ).then( TranObj => {} )
+* oTran.toMode( sMode ).then( TranObj => {} )
+* oTran.to({ format, mode }).then( TranObj => {} )
+* oTran.saveFile(filePath)
+
+oTran.toFormat('csv', {noheader:true})
+
 ```javascript
 var $$xtran = require('xtran');
 
@@ -60,34 +76,29 @@ $$xtran(csvStrA, 'csv').then(data => {
 ```
 
 ```bash
-xtran -ff csv -fm a -tf json -tm b fileA fileB
 xtran file.a.csv file.b.json
 
-
-
+xtran --ff csv --fm a --tf json --tm b fileA fileB
 ```
 
-	Usage: xtran [options] <fileFrom> <fileTo>
 
-	default mode and farmat info from file name.
+	Usage: xtran [options] <fileFrom> <fileTo> 
+
+	default mode and farmat info from file name. 
 	<fileName> = <filePath.mode.format>
 	eg.
 		xtran list.user.json list.vip.csv
 
 	Options:
-	-V, --version                     output the version number
-	--ff, --from-farmat <fileFarmat>  what format transform file from
-	--fm, --from-mode <fileMode>      what mode transform file from
-	--tf, --to-farmat <fileFarmat>    what format of file transform to
-	--tm, --to-mode <fileMode>        what mode of file transform to
-	-f, --farmat <format>             list format can <format> transform to
-	-m, --mode <mode>                 list mode can <mode> transform to
-	-l, --list                        show all transform function
-	-h, --help                        display help for command
+		-V, --version                     output the version number
+		--ff, --from-farmat <fileFarmat>  from format of file to transform
+		--fm, --from-mode <fileMode>      from mode of file to transform
+		--tf, --to-farmat <fileFarmat>    to format of file transform
+		--tm, --to-mode <fileMode>        to mode of file transform
+		-h, --help                        display help for command
 
 	Commands:
-	*
-	init [scriptDir]                  xtran function script create into [scriptDir]
-	list                              show all transform function
-	help [command]                    display help for command
+		init [scriptDir]                  xtran function script create into [scriptDir]
+		list [options]                    show all transform function
 	
+

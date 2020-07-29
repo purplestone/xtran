@@ -9,7 +9,7 @@ module.exports = {
 		return true;
 	},
 	to: function (input, opt) {
-		input = input.trim();
+		input = input.toString().trim();
 		return $$csvtojson(opt)
 		.fromString(input);
 	},

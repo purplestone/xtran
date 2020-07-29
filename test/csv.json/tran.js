@@ -13,33 +13,26 @@ var oInputJson = [{
 	b: 2
 }];
 
-$$xtran.json(oInputJson).then(data => {
+exports.run = function () {
 
-	assert.equal(data.data, oInputJson);
-	assert.equal(data.format, 'json');
-	assert.equal(data.canToFormat('xxx'), false);
-	assert.deepEqual(data.canToFormat(), [
-		'csv'
-	]);
-	data.toFormat('csv').then(oCsvData => {
-		assert.deepEqual(oCsvData.data, '"a","b"'+os.EOL+'1,2');
-		assert.equal(oCsvData.format, 'csv');
-		return oCsvData.toFormat('json');
-	}).then(oJson => {
-		assert.equal(oJson.format, 'json');
-		assert.deepEqual(oJson.data, oInputJson);
+	$$xtran.json(oInputJson).then(data => {
+
+		assert.equal(data.data, oInputJson);
+		assert.equal(data.format, 'json');
+		assert.equal(data.canToFormat('xxx'), false);
+		assert.deepEqual(data.canToFormat(), [
+			'csv'
+		]);
+		data.toFormat('csv').then(oCsvData => {
+			assert.deepEqual(oCsvData.data, '"a","b"'+os.EOL+'1,2');
+			assert.equal(oCsvData.format, 'csv');
+			return oCsvData.toFormat('json');
+		}).then(oJson => {
+			assert.equal(oJson.format, 'json');
+			assert.deepEqual(oJson.data, oInputJson);
+		});
+	
 	});
-
-});
-
-
-
-// $$xtran('./lnxc.csv', 'csv').then(data => {
-// 	var aR = [];
-// 	data.json.forEach(o => {
-// 		aR.push(o);
-// 		console.log(o);
-// 	});
-// 	console.log(Object.keys(data.tran));
-// 	data.toFile('./xc.json');
-// });
+	
+	
+};

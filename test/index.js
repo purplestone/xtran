@@ -5,8 +5,9 @@ var oTran = $$Tran.call('test');
 
 
 
-require('./csv.json/tran.js');
-require('./a.b/a.b.js');
+require('./csv.json/tran.js').run();
+require('./a.b/a.b.js').run();
+require('./cli/index.js').run();
 
 
 
