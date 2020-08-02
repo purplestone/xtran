@@ -1,4 +1,5 @@
-var $$xtran = require('${scriptRootDir}/main.js');
+// var $$xtran = require('${scriptRootDir}/main.js');
+var $$xtran = require('xtran');
 
 
 $$xtran.file('file.csv', 'csv').then(oCsv => {

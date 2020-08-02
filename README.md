@@ -5,6 +5,7 @@
 * xtran.file(filePath).then( TranObj => {} )
 * xtran.json(jsonFilePath).then( TranObj => {} )
 * xtran.config({ extFormatDir, extModeDir })
+* xtran.bind()
 * xtran.addScriptDir()
 
 TranObj
@@ -13,6 +14,7 @@ TranObj
 * oTran.toMode( sMode ).then( TranObj => {} )
 * oTran.to({ format, mode }).then( TranObj => {} )
 * oTran.saveFile(filePath)
+* oTran.bindData
 
 oTran.toFormat('csv', {noheader:true})
 
